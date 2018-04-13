@@ -32,6 +32,11 @@ public:
 			//root_ = nullptr;
 	}
 	
+	bool isEmpty()
+	{
+		return (!root_);
+	}
+	
 	void insert(T value)
 	{
 		node_t * node = new node_t;
