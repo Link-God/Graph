@@ -94,11 +94,6 @@ void Graph::set_vertices(unsigned count)
 
 void Graph::input(vector < vector<unsigned> >& in)
 {
-	if (N == 0)
-	{
-		throw std::logic_error("zero");
-		return;
-	}
 	if (in.size() != N)
 	{
 		throw std::length_error("length error");
