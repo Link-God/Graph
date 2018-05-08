@@ -20,4 +20,5 @@ public:
 	Graph operator = (Graph & other);
 	void dfs(unsigned index);
 	void return_result(ostream & stream);
+	void set_vertices(unsigned count);
 };
