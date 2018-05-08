@@ -72,3 +72,10 @@ TEST_CASE("Test_6")
 	string out = "8 7 ";
 	REQUIRE( out == stream.str() );
 }
+
+TEST_CASE("Test_7")
+{
+	Graph graph(7);
+	vector< vector<unsigned> > in{ { 1 },{ 2,6 },{4,5}, {}, {} };
+	REQUIRE_THROWS_AS(graph.input(in),std::length_error);
+}
