@@ -14,7 +14,7 @@ void Graph:: read()
 {
 	if (N == 0)
 	{
-		cerr << "zero";
+	//	cerr << "zero";
 		return;
 	}
 	//used++
