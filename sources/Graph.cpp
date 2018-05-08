@@ -88,3 +88,26 @@ void Graph::set_vertices(unsigned count)
 {
 	N = count;
 }
+
+void Graph::input(vector < vector<unsigned> >& in)
+{
+	if (N == 0)
+	{
+		throw logic_error("zero");
+		return;
+	}
+	if (in.size() != graph.size())
+	{
+		throw length_error("length error");
+		return;
+	}
+	//used++
+	for (unsigned i = 0; i < N; i++) {
+		used.push_back(false);
+	}
+	//used-- 
+	//graph++
+	graph = in;
+	//graph--
+	//result ++ --
+}
