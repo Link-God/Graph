@@ -7,7 +7,9 @@ Graph::Graph()
 
 Graph::Graph(vector < vector<unsigned> > in)
 {
+	//graph++
 	graph = in;
+	//graph--
 	N = graph.size();
 }
 
@@ -20,14 +22,9 @@ void Graph:: read()
 {
 	if (N == 0)
 	{
-	//	cerr << "zero";
+		throw logic_error("zero");
 		return;
 	}
-	//used++
-	for (unsigned i = 0; i < N; i++) {
-		used.push_back(false);
-	}
-	//used-- 
 	//graph++
 	for (unsigned i = 0; i < N; i++) {
 		vector<unsigned> temp;
@@ -50,19 +47,12 @@ void Graph:: read()
 Graph::~Graph()
 {
 	N = 0;
-	//self destruction
-	/*
-	graph.~vector();
-	used.~vector();
-	result.~vector();
-	*/
 }
 
 Graph::Graph(Graph & other)
 {
 	N = other.N;
 	graph = other.graph;
-	used = other.used;
 	if (!(other.result.empty())) result = other.result;
 }
 
@@ -71,7 +61,6 @@ Graph Graph::operator = (Graph & other)
 	if (this != &other) {
 		N = other.N;
 		graph = other.graph;
-		used = other.used;
 		if (!other.result.empty()) result = other.result;
 	}
 	return (*this);
@@ -79,6 +68,11 @@ Graph Graph::operator = (Graph & other)
 
 void Graph::dfs(unsigned index)
 {
+	//used++
+	for (unsigned i = 0; i < N; i++) {
+		used.push_back(false);
+	}
+	//used-- 
 	used[index] = true;
 	result.push_back(index);
 	for (const auto& i : graph[index])
@@ -110,11 +104,6 @@ void Graph::input(vector < vector<unsigned> >& in)
 		throw std::length_error("length error");
 		return;
 	}
-	//used++
-	for (unsigned i = 0; i < N; i++) {
-		used.push_back(false);
-	}
-	//used-- 
 	//graph++
 	graph = in;
 	//graph--
