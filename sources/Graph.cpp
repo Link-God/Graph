@@ -101,7 +101,7 @@ void Graph::input(vector < vector<unsigned> >& in)
 		throw logic_error("zero");
 		return;
 	}
-	if (in.size() != graph.size())
+	if (in.size() != N)
 	{
 		throw length_error("length error");
 		return;
