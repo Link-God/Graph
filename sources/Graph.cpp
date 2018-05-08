@@ -49,9 +49,12 @@ void Graph:: read()
 Graph::~Graph()
 {
 	N = 0;
+	//self destruction
+	/*
 	graph.~vector();
 	used.~vector();
 	result.~vector();
+	*/
 }
 
 Graph::Graph(Graph & other)
