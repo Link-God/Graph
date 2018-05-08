@@ -98,12 +98,12 @@ void Graph::input(vector < vector<unsigned> >& in)
 {
 	if (N == 0)
 	{
-		throw logic_error("zero");
+		throw std::logic_error("zero");
 		return;
 	}
 	if (in.size() != N)
 	{
-		throw length_error("length error");
+		throw std::length_error("length error");
 		return;
 	}
 	//used++
