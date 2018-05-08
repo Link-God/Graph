@@ -5,6 +5,11 @@ Graph::Graph()
 	N = 0;
 }
 
+Graph::Graph(vector < vector<unsigned> > in)
+{
+	graph = in;
+}
+
 Graph::Graph(unsigned n)
 {
 	N = n;
