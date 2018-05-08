@@ -8,6 +8,7 @@ Graph::Graph()
 Graph::Graph(vector < vector<unsigned> > in)
 {
 	graph = in;
+	N = graph.size();
 }
 
 Graph::Graph(unsigned n)
