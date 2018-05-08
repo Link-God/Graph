@@ -61,7 +61,7 @@ TEST_CASE("Test_5")
 	REQUIRE( out == stream.str() );
 }
 
-TEST_CASE("Test_5")
+TEST_CASE("Test_6")
 {
 	Graph graph(9);
 	vector< vector<unsigned> > in{ { 1 },{0,2,6 },{1,4,5}, {6}, {2} ,{2}, {1,3}, {8}, {7} };
