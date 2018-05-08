@@ -83,3 +83,8 @@ void Graph::return_result(ostream & stream)
 {
 	for (unsigned i : result) stream << i << " ";
 }
+
+void Graph::set_vertices(unsigned count)
+{
+	N = count;
+}
