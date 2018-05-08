@@ -13,6 +13,7 @@ private:
 	unsigned N;
 public:
 	Graph();
+	Graph(vector < vector<unsigned> > in);
 	Graph(unsigned n);
 	void read();
 	~Graph();
