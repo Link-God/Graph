@@ -117,3 +117,20 @@ TEST_CASE("Test_9")
 	out = "1 0 2 4 5 6 3 ";
 	REQUIRE( out == stream.str() );
 }
+
+TEST_CASE("Test_10")
+{
+	Graph graph({ { 1 },{ 0 ,2 , 6 },{ 1 ,4 , 5 },{ 6 },{ 2 } ,{ 2 },{ 1,3 } });
+	ostringstream stream;
+	graph.print_to_stream(stream);
+	string out {
+			"0:1 \n"
+			"1:0 2 6 \n"
+			"2:1 4 5 \n"
+			"3:6 \n"
+			"4:2 \n"
+			"5:2 \n"
+			"6:1 3 \n"
+	};
+	REQUIRE( out == stream.str() );
+}
