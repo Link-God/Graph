@@ -82,6 +82,12 @@ void Graph::dfs(unsigned index)
 	}
 }
 
+void Graph::dfs()
+{
+	unsigned index = 0;
+	dfs(index);
+}
+
 void Graph::return_result(ostream & stream)
 {
 	for (unsigned i : result) stream << i << " ";
