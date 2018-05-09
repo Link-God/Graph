@@ -92,5 +92,13 @@ TEST_CASE("Test_7")
 
 TEST_CASE("Test_8")
 {
-	REQUIRE_THROWS_AS(Graph graph( { {1, 10} } ),std::length_error);
+	bool success=false;
+	try{
+		Graph graph( { {1, 10} } );
+	}
+	catch(std::length_error)
+	{
+		success=true;
+	}
+	REQUIRE(success);
 }
