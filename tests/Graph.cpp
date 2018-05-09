@@ -102,3 +102,14 @@ TEST_CASE("Test_8")
 	}
 	REQUIRE(success);
 }
+
+TEST_CASE("Test_9")
+{
+	Graph graph({ { 1 },{ 0 ,2 , 6 },{ 1 ,4 , 5 },{ 6 },{ 2 } ,{ 2 },{ 1,3 } });
+	graph.dfs();
+	graph.dfs(1);
+	ostringstream stream;
+	graph.return_result(stream);
+	string out = "1 0 2 4 5 6 3 ";
+	REQUIRE( out == stream.str() );
+}
