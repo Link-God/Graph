@@ -75,20 +75,24 @@ Graph Graph::operator = (Graph & other)
 
 void Graph::dfs(unsigned index)
 {
-	//used++
 	vector<bool> used;
+	result.clear();
 	for (unsigned i = 0; i < N; i++) {
 		used.push_back(false);
 	}
-	//used--  
-	used[index] = true;
+	dfs_help(index,&used);
+}
+
+void Graph::dfs_help(unsigned index , vector<bool> * used)
+{
+	(*used)[index] = true;
 	result.push_back(index);
 	for (const auto& i : graph[index])
 	{
-		if (!used[i])
-			dfs(i);
+		if (!(*used)[i]) dfs_help(i,used);
 	}
 }
+
 
 void Graph::dfs()
 {
