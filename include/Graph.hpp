@@ -25,4 +25,6 @@ public:
 	void return_result(ostream & stream);
 	void set_vertices(unsigned count);
 	void input(vector < vector<unsigned> > & in);
+	void print_to_console();
+	void print_to_stream(ostream & stream);
 };
