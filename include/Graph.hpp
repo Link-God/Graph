@@ -10,7 +10,8 @@ class Graph {
 private:
 	vector < vector<unsigned> > graph;
 	vector<unsigned> result;
-	unsigned N;
+	unsigned N;	
+	void dfs_help(unsigned index, vector<bool> * used);
 public:
 	Graph();
 	Graph(vector < vector<unsigned> > in);
@@ -20,7 +21,6 @@ public:
 	Graph(Graph & other);
 	Graph operator = (Graph & other);
 	void dfs(unsigned index);
-	void dfs_help(unsigned index, vector<bool> * used);
 	void dfs();
 	void return_result(ostream & stream);
 	void set_vertices(unsigned count);
