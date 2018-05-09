@@ -7,6 +7,13 @@ Graph::Graph()
 
 Graph::Graph(vector < vector<unsigned> > in)
 {
+	//
+	for (unsigned i = 0; i < in.size(); i++) {
+		for (const auto& j : in[i]){
+			if (j >= in.size()) throw length_error("fail");
+		}
+	}
+	//
 	//graph++
 	graph = in;
 	//graph--
@@ -69,10 +76,11 @@ Graph Graph::operator = (Graph & other)
 void Graph::dfs(unsigned index)
 {
 	//used++
+	vector<bool> used;
 	for (unsigned i = 0; i < N; i++) {
 		used.push_back(false);
 	}
-	//used-- 
+	//used--  
 	used[index] = true;
 	result.push_back(index);
 	for (const auto& i : graph[index])
