@@ -9,7 +9,6 @@ using namespace std;
 class Graph {
 private:
 	vector < vector<unsigned> > graph;
-	vector<bool> used;
 	vector<unsigned> result;
 	unsigned N;
 public:
