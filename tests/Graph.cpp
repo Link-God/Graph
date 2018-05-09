@@ -112,6 +112,7 @@ TEST_CASE("Test_9")
 	string out = "0 1 2 4 5 6 3 ";
 	REQUIRE( out == stream.str() );
 	graph.dfs(1);
+	stream.str("");
 	graph.return_result(stream);
 	out = "1 0 2 4 5 6 3 ";
 	REQUIRE( out == stream.str() );
