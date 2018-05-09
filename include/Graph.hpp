@@ -21,6 +21,7 @@ public:
 	Graph(Graph & other);
 	Graph operator = (Graph & other);
 	void dfs(unsigned index);
+	void dfs();
 	void return_result(ostream & stream);
 	void set_vertices(unsigned count);
 	void input(vector < vector<unsigned> > & in);
