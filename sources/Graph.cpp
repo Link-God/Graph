@@ -36,8 +36,8 @@ void Graph:: read()
 	for (unsigned i = 0; i < N; i++) {
 		vector<unsigned> temp;
 		string line;
-	//	cout << "enter adjacent vertices separated by a space" << endl;// смежные вершины 
-	//	cout << i << ":";
+		cout << "enter adjacent vertices separated by a space" << endl;// смежные вершины 
+		cout << i << ":";
 		getline(cin, line);
 		istringstream stream(line);
 		int value;
@@ -121,4 +121,26 @@ void Graph::input(vector < vector<unsigned> >& in)
 	graph = in;
 	//graph--
 	//result ++ --
+}
+
+void Graph::print_to_stream(ostream & stream)
+{
+	for (unsigned i = 0; i < N; i++) {
+		stream << i << ":";
+		for (const auto j : graph[i]) {
+			stream << j << " ";
+		}
+		stream<< endl;
+	}
+}
+
+void Graph::print_to_console()
+{
+	for (unsigned i = 0; i < N; i++) {
+		cout << i << ":";
+		for (const auto j : graph[i]) {
+			cout << j << " ";
+		}
+		cout << endl;
+	}
 }
