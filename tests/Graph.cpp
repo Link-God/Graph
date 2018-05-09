@@ -89,3 +89,9 @@ TEST_CASE("Test_7")
 	vector< vector<unsigned> > in{ { 1 },{ 2,6 },{4,5}, {}, {} };
 	REQUIRE_THROWS_AS(graph.input(in),std::length_error);
 }
+
+TEST_CASE("Test_8")
+{
+	REQUIRE_THROWS_AS(Graph graph( { {1, 10} } ),std::length_error);
+	
+}
