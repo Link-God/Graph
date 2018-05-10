@@ -134,3 +134,17 @@ TEST_CASE("Test_10")
 	};
 	REQUIRE( out == stream.str() );
 }
+
+TEST_CASE("Test_11")
+{	
+	string in_out{
+		"0:1\n"
+		"1:2 3\n"
+	};
+	istringstream in(in_out);
+	Graph t;
+	t.read(in);
+	ostringstream stream;
+	graph.print_to_stream(stream);
+	REQUIRE( in_out == stream.str() );
+}
