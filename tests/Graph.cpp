@@ -142,8 +142,8 @@ TEST_CASE("Test_11")
 		"1:2 3 \n"
 	};
 	istringstream in(in_out);
-	Graph t;
-	t.read(in);
+	Graph graph;
+	graph.read(in);
 	ostringstream stream;
 	graph.print_to_stream(stream);
 	REQUIRE( in_out == stream.str() );
