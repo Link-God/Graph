@@ -27,6 +27,7 @@ Graph::Graph(unsigned n)
 
 void Graph::read_wihtout_N()
 {
+	graph.clear();
 	//N++
 	cout << "insert N" << endl;
 	cin >> N;
@@ -52,6 +53,7 @@ void Graph::read_wihtout_N()
 
 void Graph:: read_with_N()
 {
+	graph.clear();
 	if (N == 0)
 	{
 		throw logic_error("zero");
@@ -78,6 +80,7 @@ void Graph:: read_with_N()
 
 void Graph::read(istringstream & stream)
 {
+	graph.clear();
 	string str;
 	while (getline(stream, str))
 	{
@@ -154,7 +157,7 @@ void Graph::return_result(ostream & stream)
 
 void Graph::set_vertices(unsigned count)
 {
-	N = count;
+	N = count;	
 }
 
 void Graph::input(vector < vector<unsigned> >& in)
