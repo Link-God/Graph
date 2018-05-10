@@ -25,7 +25,32 @@ Graph::Graph(unsigned n)
 	N = n;
 }
 
-void Graph:: read()
+void Graph::read_wihtout_N()
+{
+	//N++
+	cout << "insert N" << endl;
+	cin >> N;
+	//N--
+	//graph++
+	for (unsigned i = 0; i < N; i++) {
+		vector<unsigned> temp;
+		string line;
+			cout << "enter adjacent vertices separated by a space" << endl;// смежные вершины 
+			cout << i << ":";
+		getline(cin, line);
+		istringstream stream(line);
+		int value;
+		while (stream >> value)
+		{
+			temp.push_back(value);
+		}
+		graph.push_back(temp);
+	}
+	//graph--
+	//result ++ --
+}
+
+void Graph:: read_with_N()
 {
 	if (N == 0)
 	{
@@ -49,6 +74,28 @@ void Graph:: read()
 	}
 	//graph--
 	//result ++ --
+}
+
+void Graph::read(istringstream & stream)
+{
+	string str;
+	while (getline(stream, str))
+	{
+		istringstream stream(str);
+		unsigned n;
+		char op;
+		if (stream >> n && stream >> op && op==':') {
+			N = n + 1;
+			int value;
+			vector<unsigned> temp;
+			while (stream >> value)
+			{
+				temp.push_back(value);
+			}
+			graph.push_back(temp);
+		}
+	}
+	
 }
 
 Graph::~Graph()
