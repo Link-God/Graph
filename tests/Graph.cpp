@@ -138,8 +138,8 @@ TEST_CASE("Test_10")
 TEST_CASE("Test_11")
 {	
 	string in_out{
-		"0:1\n"
-		"1:2 3\n"
+		"0:1 \n"
+		"1:2 3 \n"
 	};
 	istringstream in(in_out);
 	Graph t;
