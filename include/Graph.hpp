@@ -16,7 +16,9 @@ public:
 	Graph();
 	Graph(vector < vector<unsigned> > in);
 	Graph(unsigned n);
-	void read();
+	void read_with_N();
+	void read_wihtout_N();
+	void read(istringstream & stream);
 	~Graph();
 	Graph(Graph & other);
 	Graph operator = (Graph & other);
